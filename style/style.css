@@ -1,0 +1,116 @@
+*, *::after, *::before{
+    box-sizing: border-box
+}
+
+.search__box{
+    margin: 50px auto;
+    width: 400px;
+    position: relative;
+    transition: all .4s ease-in-out;
+}
+.search__box form{
+    margin: 0 auto;
+    width: 100%
+}
+input[type="search"]{
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid #999;
+    outline: none;
+    height: 45px;
+    padding: 2px 8px;
+    position: relative;
+    font-size: 16px;
+    transition: all .2s ease-in-out;
+}
+
+.animated__label{
+    position: absolute;
+    left: 45%;
+    width: 0;
+    height: 2px;
+    background: #333333;
+    z-index: 1;
+    bottom: -8px;
+    transition: all .2s ease-in-out;
+}
+input[type="search"]:focus ~ .animated__label{
+    width: 100%;
+    left: 0
+}
+button.fa-search{
+    position: absolute;
+    right: 0;
+    top: 21px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666666;
+    transition: all .2s ease-in-out;
+}
+input[type="search"]:focus ~ button.fa-search{
+   color: #333333;
+}
+label.place__holder{
+    color:#999; 
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:8px;
+    top:10px;
+    transition:0.2s ease all; 
+}
+input[type="search"]:focus ~ label[for="placeHolder"]{
+    top:-10px;
+    left: 0;
+    font-size:14px;
+    color:#333;
+}
+ul#search__res{
+    background: #ffffff;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    border: 1px solid;
+    border-color: #cbcfe2 #c8cee7 #c4c7d7;
+    margin-top: 5px;
+    padding-left: 5px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fdfdfd), color-stop(100%, #eceef4));
+    background-image: -webkit-linear-gradient(top, #fdfdfd, #eceef4);
+    background-image: linear-gradient(top, #fdfdfd, #eceef4);
+    position: absolute;
+    top: 55px;
+    z-index: 25;
+    display: none
+}
+#search__res::before, #search__res::after{
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px outset transparent;
+    top: -10px;    
+}
+#search__res::before{
+    border-bottom: 5px solid #c4c7d7;
+}
+#search__res::after{
+    border-bottom: 5px solid #fdfdfd;
+}
+ul#search__res li{
+    list-style: none;
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    z-index: 30;
+    cursor: pointer;
+}
+.highlight{
+    color: yellow
+}
